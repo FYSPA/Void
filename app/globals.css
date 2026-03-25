@@ -19,8 +19,43 @@
   }
 }
 
+/* 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--foreground);
+  background: linear-gradient(180deg, #000000 0%, #0C0C0C 100%);
+  background-attachment: fixed;
+}
+
+
+.bg-void {
+  /* 1. El degradado de fondo que me pediste */
+  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. La cuadrícula hecha con gradientes */
+.bg-void::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Crea líneas de 1px cada 40px */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  /* ESTO ES LO MÁS IMPORTANTE: Hace que la cuadrícula se desvanezca en los bordes */
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+
+  pointer-events: none;
+  /* Para que no interfiera con los clics */
 }
