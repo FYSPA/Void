@@ -1,4 +1,5 @@
 import { Space_Grotesk } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -7,14 +8,21 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+// Configuración de la fuente local
+const nicoMojiLocal = localFont({
+  src: '../public/fonts/NicoMoji-Regular.ttf',
+  variable: '--font-nico-moji',
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning className="h-full bg-void">
-      <body className={`${spaceGrotesk.className} antialiased`}>
+    <html lang="es" suppressHydrationWarning className="h-full bg-black">
+      <body className={`antialiased`}>
         {children}
       </body>
     </html>

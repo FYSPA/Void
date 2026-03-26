@@ -12,6 +12,7 @@ module.exports = {
                 // "space" será el nombre de la clase: font-space
                 // "var(--font-space-grotesk)" debe ser igual al variable: de tu layout
                 space: ["var(--font-space-grotesk)", "sans-serif"],
+                nico: ["var(--font-nico-moji)", "sans-serif"],
             },
         },
     },

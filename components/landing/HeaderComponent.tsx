@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 export default function HeaderComponent() {
     return (
-        <header className="flex justify-between items-center w-full pl-10 pr-10 pt-2 bg-black z-50 ">
+        <header className="flex justify-between items-center w-full pl-10 pr-10 pt-2 bg-black z-50 font-space">
             <div className="flex justify-center items-center p-0 m-0 pl-10">
                 <Image src="/ui/icon.png" alt="Logo" loading="eager" width={45} height={40} />
             </div>
