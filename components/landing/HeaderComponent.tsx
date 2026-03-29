@@ -5,7 +5,7 @@ export default function HeaderComponent() {
     return (
         <header className="flex justify-between items-center w-full pl-10 pr-10 pt-2 z-10 bg-black font-space">
             <div className="flex justify-center items-center p-0 m-0 pl-10">
-                <Image src="/ui/icon.png" alt="Logo" loading="eager" width={45} height={40} />
+                <Image src="/ui/icon.png" alt="Logo" loading="eager" width={45} height={40} draggable={false} className="pointer-events-none" />
             </div>
             <nav className="flex justify-between pl-24">
                 <ul className="flex w-full flex-row gap-10">

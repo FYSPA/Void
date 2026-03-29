@@ -20,7 +20,7 @@ export default function HeroComponent() {
     }, [controls]);
 
     return (
-        <div className="min-h-screen flex-col bg-void z-20 border border-white/30 ml-14 mr-14 rounded-xl flex relative overflow-hidden">
+        <div className="min-h-screen flex-col bg-void z-90 border border-white/30 ml-14 mr-14 rounded-xl flex relative overflow-hidden">
             <LightTop />
             <motion.div
                 animate={controls}
@@ -47,7 +47,7 @@ export default function HeroComponent() {
                     </span>
 
                 </div>
-                <div className="justify-center items-center flex mt-10 flex-col text-center">
+                <div className="justify-center items-center flex mt-10 flex-col text-center z-40">
                     <a
                         href="/login"
                         className="
