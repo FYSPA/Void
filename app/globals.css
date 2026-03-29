@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-space: var(--font-space);
+  --font-nico: var(--font-nico);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,4 +60,58 @@ body {
 
   pointer-events: none;
   /* Para que no interfiera con los clics */
+}
+
+.style-stroke {
+  /* Crea ese borde de 1px que brilla en el cristal */
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+}
+
+.gradient-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+
+/* app/globals.css */
+
+.void-glass-button {
+  position: relative;
+  /* Frost 3.03 */
+  backdrop-filter: blur(3.03px);
+  -webkit-backdrop-filter: blur(3.03px);
+
+  /* Refracción y Light 52° */
+  background: linear-gradient(142deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+  /* Depth 15.14 adaptado a botón (más sutil para que no tape el texto) */
+  box-shadow:
+    inset 0 0 12px rgba(255, 255, 255, 0.08),
+    0 4px 15px rgba(0, 0, 0, 0.4);
+  /* Sombra externa para despegarlo del fondo */
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.void-glass-button:hover {
+  background: linear-gradient(142deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-void-entry {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
